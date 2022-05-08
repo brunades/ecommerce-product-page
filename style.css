@@ -116,3 +116,37 @@ a {
 .navbar-nav-right .avatar:hover {
   outline: 2px solid var(--orange);
 }
+
+
+/* Box */
+
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+section.box {
+  margin-top: 85px;
+  justify-items: center;
+}
+
+.box-carousel {
+  max-width: 80%;
+}
+
+.box-carousel .top-img img{
+  max-width: 55%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.box-img {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.box-img img {
+  max-width: 14%;
+  border-radius: 12px;
+}

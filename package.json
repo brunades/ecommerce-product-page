@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce-product-page",
+  "version": "1.0.0",
+  "description": "Ecommerce product page",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmiAbraini/ecommerce-product-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmiAbraini/ecommerce-product-page/issues"
+  },
+  "homepage": "https://github.com/EmiAbraini/ecommerce-product-page#readme"
+}

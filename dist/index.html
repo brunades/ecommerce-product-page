@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/main.css">
   
   <title>Frontend Mentor | E-commerce product page</title>
 
@@ -19,43 +19,44 @@
   <nav class="navbar">
     <div class="navbar-container">
       <div class="navbar-brand">
-        <img src="img/logo.svg" alt="logo"/>
+        <img src="../img/logo.svg" alt="logo"/>
       </div>
-      <ul class="navbar-nav-left">
+      <ul class="nav-left">
         <li><a href="#">Collections</a></li>
         <li><a href="#">Men</a></li>
         <li><a href="#">Women</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <div class="navbar-nav-right">
-        <div class="cart-counter disabled"><p class="counter">1</p></div>
-        <img src="img/icon-cart.svg" alt="cart" class="cart">
-        <img src="img/image-avatar.png" alt="avatar" class="avatar">
+      <div class="nav-right">
+<!--         <div class="cart-counter disabled"><p class="counter">1</p></div> -->
+        <span class="badge badge-warning">0</span>
+        <img src="../img/icon-cart.svg" alt="cart" class="cart">
+        <img src="../img/image-avatar.png" alt="profile-pic" class="profile-pic">
       </div>
     </div>
   </nav>
 
-  <section class="box grid-col-2">
-    <div class="box-carousel">
-      <div class="top-img">
-        <img name="carousel" src="img/image-product-1.jpg"/>
+  <section class="product-card grid-col-2">
+    <div class="product-carousel">
+      <div class="img-xl">
+        <img name="carousel" src="../img/image-product-1.jpg"/>
       </div>
-      <div class="box-img">
-        <img src="img/image-product-1-thumbnail.jpg" alt="product 1">
-        <img src="img/image-product-2-thumbnail.jpg" alt="product 2">
-        <img src="img/image-product-3-thumbnail.jpg" alt="product 3">
-        <img src="img/image-product-4-thumbnail.jpg" alt="product 4">
+      <div class="img-sm">
+        <img src="../img/image-product-1-thumbnail.jpg" alt="product 1">
+        <img src="../img/image-product-2-thumbnail.jpg" alt="product 2">
+        <img src="../img/image-product-3-thumbnail.jpg" alt="product 3">
+        <img src="../img/image-product-4-thumbnail.jpg" alt="product 4">
       </div>
     </div>
-    <div class="box-text">
-      <h3>Sneaker Company</h3>
+    <div class="product-text">
+      <h5>Sneaker Company</h3>
       <h1>Fall Limited Edition Sneakers</h1>
       <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
         durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
       <h2>$125.00<span>50%</span></h2>
       <h4>$250.00</h4>
-      <div class="box-button">
+      <div class="product-btn">
         <div class="cart-quantity">
           <button>-</button>
           <p>0</p>

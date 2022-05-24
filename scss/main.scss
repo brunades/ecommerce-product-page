@@ -28,8 +28,19 @@ a {
   text-decoration: none;
 }
 
+
+// Global 
 .disabled {
   display: none;
+}
+
+.active {
+  border: 2px solid $orange;
+  border-radius: 10px;
+
+  img {
+    opacity: 22%;
+  }
 }
 
 // Navbar
@@ -114,6 +125,27 @@ a {
   }
 }
 
+.cart-card {
+  position: absolute;
+  top: 80px;
+  right: 110px;
+  width: 350px;
+  height: 220px;
+  border-radius: 10px;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px, rgba(0, 0, 0, 0.02) 0px -6px 20px;
+
+  .cart-title {
+    border-bottom: 1px solid $grayish-blue;
+
+    h1 {
+      font-size: 0.9rem;
+      margin-left: 25px;
+      padding: 25px 0 20px;
+    }
+  }
+}
+
 // Product Card
 .grid-col-2 {
   display: grid;
@@ -148,21 +180,26 @@ a {
    justify-content: space-evenly;
    padding: 0 55px;
 
-   img {
+   div {
      width: 17%;
-     border-radius: 10px;
+   }
+
+   img {
+     display: block;
+     width: 100%;
+     border-radius: 8px;
    }
  }
 }
 
 .product-text {
-  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   h5 {
     text-transform: uppercase;
+    font-size: 0.7rem;
     letter-spacing: 2px;
     color: $orange;
   }
@@ -173,23 +210,87 @@ a {
     font-size: 2.4rem;
   }
 
-  p {
+  .desc {
     width: 80%;
     margin-top: 30px;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
     color: $dark-grayish-blue;
   }
 
   h2 {
+    display: flex;
     margin-top: 20px;
     font-size: 1.5rem;
 
     span {
-      margin-left: 10px;
-      padding: 4px 8px;
+      align-self: center;
+      margin-left: 14px;
+      padding: 2px 8px;
       font-size: 0.9rem;
       color: $orange;
       background-color: $pale-orange;
       border-radius: 6px;
     }
   }
+
+  h4 {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    color: $grayish-blue;
+  }
+}
+
+.product-btn {
+  display: flex;
+  margin-top: 25px;
+
+  .btn-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $light-grayish-blue;
+    width: 130px;
+    border-radius: 10px;
+    margin-right: 12px;
+
+    p {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+
+  .btn-cart {
+    width: 220px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    box-shadow: $pale-orange 0px 19px 38px, $pale-orange 0px 15px 12px;
+
+    img {
+      width: 14px;
+      margin-right: 10px;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 10px;
+}
+
+.btn-light {
+  background-color: transparent;
+  color: $orange;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-orange {
+  background-color: $orange;
+  color: $white;
+  
 }

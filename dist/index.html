@@ -29,10 +29,14 @@
         <li><a href="#">Contact</a></li>
       </ul>
       <div class="nav-right">
-<!--         <div class="cart-counter disabled"><p class="counter">1</p></div> -->
         <span class="badge badge-warning">0</span>
         <img src="../img/icon-cart.svg" alt="cart" class="cart">
         <img src="../img/image-avatar.png" alt="profile-pic" class="profile-pic">
+        <div class="cart-card">
+          <div class="cart-title">
+            <h1>Cart</h1>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -40,37 +44,48 @@
   <section class="product-card grid-col-2">
     <div class="product-carousel">
       <div class="img-xl">
-        <img name="carousel" src="../img/image-product-1.jpg"/>
+        <img id="current" name="carousel" src="../img/image-product-1.jpg"/>
       </div>
       <div class="img-sm">
-        <img src="../img/image-product-1-thumbnail.jpg" alt="product 1">
-        <img src="../img/image-product-2-thumbnail.jpg" alt="product 2">
-        <img src="../img/image-product-3-thumbnail.jpg" alt="product 3">
-        <img src="../img/image-product-4-thumbnail.jpg" alt="product 4">
+        <div class="product active">
+          <img src="../img/image-product-1-thumbnail.jpg">
+        </div>
+        <div class="product">
+          <img src="../img/image-product-2-thumbnail.jpg">
+        </div>
+        <div class="product">
+          <img src="../img/image-product-3-thumbnail.jpg">
+        </div>
+        <div class="product">
+          <img src="../img/image-product-4-thumbnail.jpg">
+        </div>
       </div>
     </div>
     <div class="product-text">
-      <h5>Sneaker Company</h3>
+      <h5>Sneaker Company</h5>
       <h1>Fall Limited Edition Sneakers</h1>
-      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+      <p class="desc">These low-profile sneakers are your perfect casual wear companion. Featuring a 
         durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
       <h2>$125.00<span>50%</span></h2>
       <h4>$250.00</h4>
       <div class="product-btn">
-        <div class="cart-quantity">
-          <button>-</button>
+        <div class="btn-quantity">
+          <button class="btn btn-light">&#8722</button>
           <p>0</p>
-          <button>+</button>
+          <button class="btn btn-light">&#43</button>
         </div>
-        <button>Add to cart</button>
+        <button class="btn-cart btn btn-orange">
+          <img src="/img/icon-cart-white.svg" alt=""> Add to cart</button>
       </div>
     </div>
   </section>
   
   
-  <div class="attribution">
+  <div class="attribution" style="margin-top: 30px;">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Emanuela</a>.
   </div>
+
+  <script src="/dist/js/main.js"></script>
 </body>
 </html>

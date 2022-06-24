@@ -12,7 +12,7 @@ function img_scroll(e) {
        document.querySelectorAll('.product.active').forEach(prod => prod.classList.remove('active'))
      }
      document.querySelectorAll(`.${img_sm_class}`).forEach(prod => prod.parentElement.classList.add('active'));
-     imgs_xl.forEach(img => img.src = `../img/image-${img_sm_class}.jpg`);
+     imgs_xl.forEach(img => img.src = `./img/image-${img_sm_class}.jpg`);
 }
 
 function img_scroll_lightbox(e) {
@@ -21,7 +21,7 @@ function img_scroll_lightbox(e) {
        document.querySelector('.lightbox .active').classList.remove('active')
      }
      document.querySelector(`.lightbox .${img_sm_class}`).parentElement.classList.add('active');
-     imgs_xl[0].src = `../img/image-${img_sm_class}.jpg`;
+     imgs_xl[0].src = `./img/image-${img_sm_class}.jpg`;
 }
 
 // Lightbox
@@ -33,11 +33,11 @@ close_icon.addEventListener('mouseleave', close_icon_white);
 close_icon.addEventListener('click', toggle_lightbox);
 
 function close_icon_orange () {
-  document.querySelector('.icon-close').querySelector('img').src = '../img/icon-close-orange.svg';
+  document.querySelector('.icon-close').querySelector('img').src = './img/icon-close-orange.svg';
 }
 
 function close_icon_white () {
-  document.querySelector('.icon-close').querySelector('img').src = '../img/icon-close.svg';
+  document.querySelector('.icon-close').querySelector('img').src = './img/icon-close.svg';
 }
 
 function toggle_lightbox () {
@@ -56,19 +56,19 @@ next_icon.parentElement.addEventListener('mouseleave', next_icon_white);
 next_icon.parentElement.addEventListener('click', next_image);
 
 function prev_icon_orange () {
-  prev_icon.src = '../img/icon-previous-orange.svg'
+  prev_icon.src = './img/icon-previous-orange.svg'
 }
 
 function prev_icon_white () {
-  prev_icon.src = '../img/icon-previous.svg'
+  prev_icon.src = './img/icon-previous.svg'
 }
 
 function next_icon_orange () {
-  next_icon.src = '../img/icon-next-orange.svg'
+  next_icon.src = './img/icon-next-orange.svg'
 }
 
 function next_icon_white () {
-  next_icon.src = '../img/icon-next.svg'
+  next_icon.src = './img/icon-next.svg'
 }
 
 function next_image () {
@@ -81,7 +81,7 @@ function next_image () {
     document.querySelector('.lightbox .img-sm').firstElementChild.classList.add('active')
   }
   let prod_class = document.querySelector('.lightbox .active').firstElementChild.classList
-  imgs_xl[0].src = `../img/image-${prod_class}.jpg`
+  imgs_xl[0].src = `./img/image-${prod_class}.jpg`
 }
 
 function prev_image () {
@@ -94,5 +94,5 @@ function prev_image () {
     document.querySelector('.lightbox .img-sm').lastElementChild.classList.add('active')
   }
   let prod_class = document.querySelector('.lightbox .active').firstElementChild.classList
-  imgs_xl[0].src = `../img/image-${prod_class}.jpg`
+  imgs_xl[0].src = `./img/image-${prod_class}.jpg`
 }

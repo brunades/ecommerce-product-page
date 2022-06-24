@@ -16,5 +16,5 @@
 .prettierignore
 
 # Hide design & node_modules folder
-/design
+design/
 /node_modules

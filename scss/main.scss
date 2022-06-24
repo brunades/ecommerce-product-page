@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+@import 'config';
+
 $orange:hsl(26, 100%, 55%);
 $pale-orange: hsl(25, 100%, 94%);
 $very-dark-blue: hsl(220, 13%, 13%);
-$dark-grayish-blue: hsl(219, 9%, 45%);
+$dark-grayish-blue: hsl(217, 9%, 45%);
 $grayish-blue: hsl(220, 14%, 75%);
 $light-grayish-blue: hsl(223, 64%, 98%);
 $white: hsl(0, 0%, 100%);
@@ -28,21 +30,6 @@ a {
   text-decoration: none;
 }
 
-
-// Global 
-.disabled {
-  display: none;
-}
-
-.active {
-  border: 2px solid $orange;
-  border-radius: 10px;
-
-  img {
-    opacity: 22%;
-  }
-}
-
 // Navbar
 .navbar {
   width: 100%;
@@ -52,7 +39,7 @@ a {
 .navbar-container {
   height: 100%;
   max-width: 80%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,26 +112,96 @@ a {
   }
 }
 
+//Cart Card
 .cart-card {
   position: absolute;
   top: 80px;
   right: 110px;
-  width: 350px;
+  width: 300px;
   height: 220px;
   border-radius: 10px;
   background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px, rgba(0, 0, 0, 0.02) 0px -6px 20px;
 
   .cart-title {
+    height: 60px;
     border-bottom: 1px solid $grayish-blue;
 
     h1 {
-      font-size: 0.9rem;
-      margin-left: 25px;
-      padding: 25px 0 20px;
+      font-size: 0.8rem;
+      margin-left: 20px;
+      padding: 20px 0;
     }
   }
 }
+
+.card-desc {
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .empty {
+    color: $dark-grayish-blue;
+  }
+}
+
+.total-products {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+
+    .upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: -20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 15%;
+      border-radius: 4px;
+    }
+
+    .title,
+    .desc p{
+      font-size: 0.83rem;
+      font-weight: 400;
+      color: $grayish-blue;
+      line-height: 1.3rem;
+    }
+
+    .desc {
+      display: flex;
+
+      span {
+        margin-left: 5px;
+      }
+      
+      .total-price{
+        font-weight: bold;
+        color: $very-dark-blue;
+        margin-left: 5px;
+      }
+    }
+
+    #i-delete {
+      cursor: pointer;
+      width: 100%;
+      max-width: 12px;
+    }
+  }
+
+  button {
+    height: 45px;
+    margin-bottom: -20px;
+  }
+}
+
+
 
 // Product Card
 .grid-col-2 {
@@ -159,15 +216,16 @@ a {
   margin: 70px auto 0;
 }
 
-.product-carousel {
+.products {
   grid-column: 1;
 
  .img-xl {
-   width: 100%;
-   text-align: center;
+   cursor: pointer;
+   width: 70%;
+   margin: 0 auto;
 
    img {
-     width: 70%;
+     width: 100%;
      border-radius: 14px;
    }
  }
@@ -181,13 +239,20 @@ a {
    padding: 0 55px;
 
    div {
+     cursor: pointer;
      width: 17%;
+     border-radius: 8px;
+     background-color: $white;
    }
 
    img {
      display: block;
      width: 100%;
-     border-radius: 8px;
+     border-radius: inherit;
+
+     &:hover {
+       opacity: 60%;
+     }
    }
  }
 }
@@ -217,21 +282,25 @@ a {
     line-height: 1.4rem;
     color: $dark-grayish-blue;
   }
+}
+
+.product-price {
+  display: grid;
+  grid-template-columns: 1;
 
   h2 {
-    display: flex;
     margin-top: 20px;
     font-size: 1.5rem;
+  }
 
-    span {
-      align-self: center;
-      margin-left: 14px;
-      padding: 2px 8px;
-      font-size: 0.9rem;
-      color: $orange;
-      background-color: $pale-orange;
-      border-radius: 6px;
-    }
+  span {
+    align-self: center;
+    margin-left: 14px;
+    padding: 2px 8px;
+    font-size: 0.9rem;
+    color: $orange;
+    background-color: $pale-orange;
+    border-radius: 6px;
   }
 
   h4 {
@@ -263,8 +332,6 @@ a {
 
   .btn-cart {
     width: 220px;
-    font-size: 0.7rem;
-    font-weight: bold;
     box-shadow: $pale-orange 0px 19px 38px, $pale-orange 0px 15px 12px;
 
     img {
@@ -274,8 +341,58 @@ a {
   }
 }
 
+//Lightbox
+.products {
+  &.lightbox {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 11vh;
+    right: 30vw;
+    width: 45%;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.75);
+
+    .img-sm {
+      padding: 0 120px;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  position: absolute;
+  top: 230px;
+  background-color: $white;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  &.prev{
+    left: 75px;
+  }
+
+  &.next{
+    right: 75px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 10px;
+  }
+}
+
+#i-close {
+  cursor: pointer;
+  align-self: flex-end;
+  margin: 0 100px 15px 0;
+}
+
 // Button Styles
 .btn {
+  cursor: pointer;
   display: block;
   border: 0;
   border-radius: 7px;
@@ -292,5 +409,26 @@ a {
 .btn-orange {
   background-color: $orange;
   color: $white;
-  
+  font-size: 0.8rem;
+  font-weight: bold;
 }
+
+// Global 
+.disabled {
+  display: none;
+}
+
+.active {
+  border: 2px solid $orange;
+  border-radius: 10px;
+
+  img {
+    opacity: 22%;
+
+    &:hover {
+      opacity: 22% !important;
+    }
+  }
+}
+
+@import 'mobile';

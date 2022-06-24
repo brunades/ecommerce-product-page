@@ -1,0 +1,12 @@
+// Media Query Mixins
+@mixin mediaSm {
+  @media screen and (max-width: 375px){
+    @content;
+  }
+}
+
+//Animations
+@keyframes slide-from-left {
+  0% {transform: translateX(-400px)};
+  100% {transform: translateX(0);}
+}

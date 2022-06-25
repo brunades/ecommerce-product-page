@@ -85,7 +85,7 @@ a {
       outline: 2px solid #ff7d1a; }
 
 .cart-card {
-  position: absolute;
+  position: fixed;
   top: 80px;
   right: 110px;
   width: 300px;
